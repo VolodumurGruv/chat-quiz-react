@@ -15,4 +15,22 @@
 	&__btn {
 		margin-right: 1.2rem;
 	}
+
+	&__user {
+		display: flex;
+		align-items: center;
+	}
+
+	&__user-photo {
+		width: 2.2rem;
+		margin-right: 1rem;
+		border-radius: 50%;
+	}
+
+	&__user-name {
+		margin-right: 1rem;
+		font-weight: 700;
+		font-size: 1.2rem;
+		color: rgb(238, 236, 228);
+	}
 }
