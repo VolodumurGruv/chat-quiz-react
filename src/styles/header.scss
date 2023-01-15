@@ -33,4 +33,32 @@
 		font-size: 1.2rem;
 		color: rgb(238, 236, 228);
 	}
+
+	&__login-btn-wraper {
+		position: absolute;
+		top: 40%;
+		left: 30%;
+		padding: 3rem 5rem;
+		background-color: #232327;
+	}
+
+	&__login-btn {
+		display: flex;
+		width: 25rem;
+		padding: 0.3rem 0;
+		font-size: 1.4rem;
+		font-weight: 700;
+		line-height: 1.5rem;
+		border-radius: 1px;
+		border: 2px solid rgba(255, 255, 0, 0.712);
+		background-color: transparent;
+		color: rgb(238, 236, 228);
+		cursor: pointer;
+	}
+
+	&__login-btn svg {
+		width: 1.4rem;
+		margin-left: 0.5rem;
+		margin-right: 5rem;
+	}
 }

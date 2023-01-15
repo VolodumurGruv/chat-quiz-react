@@ -5,7 +5,7 @@ import "./styles/fonts.scss"
 
 function App() {
 	return (
-		<div>
+		<div className="body__bg_black-color">
 			<Header />
 			<Layout />
 		</div>

@@ -9,6 +9,8 @@ import {
 	onAuthStateChanged,
 } from "firebase/auth";
 import { useEffect } from "react";
+import GoogleSVG from "./GoogleSVG";
+
 function Login() {
 	const dispatch = useDispatch();
 	const provider = new GoogleAuthProvider();
@@ -62,8 +64,10 @@ function Login() {
 	};
 
 	return (
-		<div>
-			<button onClick={handleAuth}>google login</button>
+		<div className="header__login-btn-wraper">
+			<button className="header__login-btn" onClick={handleAuth}>
+				<GoogleSVG id={"google"} /> <span>Login with Google</span>
+			</button>
 		</div>
 	);
 }
