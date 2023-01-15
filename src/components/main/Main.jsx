@@ -4,8 +4,8 @@ import ChatBox from "./ChatBox";
 function Main() {
 	return (
 		<section className="main">
-			<div className="main_continer-left">Main</div>
-			<ChatBox/>
+			<div className="main__continer_left">Main</div>
+			<ChatBox />
 		</section>
 	);
 }

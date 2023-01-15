@@ -1,12 +1,12 @@
 .main {
 	display: flex;
-	&_continer-left {
+	&__continer_left {
 		width: 60vw;
 		height: 89vh;
 		background-color: #2c2d32;
 	}
 
-	&_continer-right {
+	&__continer_right {
 		width: 40vw;
 		background-color: #2c2d32;
 		height: 89vh;
