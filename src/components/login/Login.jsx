@@ -40,6 +40,7 @@ function Login() {
 							isAuth: true,
 							displayName: user.displayName,
 							photoURL: user.photoURL,
+							userUID: user.uid,
 						})
 					);
 				}
