@@ -14,7 +14,9 @@ function ChatBox() {
 	const { userUID } = useSelector((state) => state.auth);
 
 	useEffect(() => {
-		const unsub = getMessage(userUID, (a) => dispatch(setMSG({ msg: a })));
+		const unsub = getMessage(userUID, (a) =>
+			!!a.message ? dispatch(setMSG({ msg: a })) : null
+		);
 
 		return () => unsub;
 	}, []);
@@ -27,7 +29,7 @@ function ChatBox() {
 	const send = (e) => {
 		e.preventDefault();
 
-		if (!msg.message) {
+		if (!msg?.message) {
 			addMessage(userUID, { message: [message] });
 			setMessage("");
 			return;
@@ -39,7 +41,7 @@ function ChatBox() {
 	return (
 		<div className="main__continer_right">
 			<div className="main__messanges" style={{ color: "white" }}>
-				{msg.message
+				{msg?.message
 					? msg?.message.map((msg, i) => (
 							<p key={i} className="main__messanges_msg">
 								{msg}
