@@ -8,7 +8,7 @@ function Header() {
 	const { isAuth } = useSelector((state) => state.auth);
 	const dispatch = useDispatch();
 	const { displayName, photoURL } = useSelector((state) => state.auth);
-	console.log(photoURL);
+
 	const logout = async () => {
 		try {
 			await signOut(auth).then(() => {

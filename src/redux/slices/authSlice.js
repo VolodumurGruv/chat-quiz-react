@@ -13,7 +13,7 @@ const authSlice = createSlice({
 			state.isAuth = action.payload.isAuth;
 			state.displayName = action.payload.displayName;
 			state.photoURL = action.payload.photoURL;
-			state.userUID = action.payload.uid;
+			state.userUID = action.payload.userUID;
 		},
 	},
 });
