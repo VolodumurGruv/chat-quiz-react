@@ -4,7 +4,9 @@ const msgSlice = createSlice({
 	name: "msg",
 	initialState: {
 		message: null,
-		startQuiz: false
+		startQuiz: false,
+		ques: [],
+		isQuiz: false,
 	},
 	reducers: {
 		setMSG: (state, action) => {
@@ -12,11 +14,20 @@ const msgSlice = createSlice({
 		},
 
 		setStart: (state, action) => {
-			state.startQuiz = action.payload
-		}
+			state.startQuiz = action.payload;
+		},
+
+		setQuestions: (state, action) => {
+			console.log(action);
+			state.ques = action.payload.ques;
+		},
+
+		setIsQuiz: (state, action) => {
+			state.isQuiz = action.payload;
+		},
 	},
 });
 
-export const { setMSG, setStart } = msgSlice.actions;
+export const { setMSG, setStart, setQuestions, setIsQuiz } = msgSlice.actions;
 
 export default msgSlice.reducer;
