@@ -1,11 +1,16 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setMSG } from "../../redux/slices/msgSlice";
-import { addMessage, getMessage } from "../../firebaseInit/handleData";
+import {
+	addMessage,
+	getMessage,
+	updateMessage,
+} from "../../firebaseInit/handleData";
 
 function ChatBox() {
 	const [message, setMessage] = useState("");
 	const dispatch = useDispatch();
+	const msg = useSelector((state) => state.msg.message);
 	const { userUID } = useSelector((state) => state.auth);
 
 	useEffect(() => {
@@ -22,14 +27,26 @@ function ChatBox() {
 	const send = (e) => {
 		e.preventDefault();
 
-		addMessage(userUID, { message: message });
-
+		if (!msg.message) {
+			addMessage(userUID, { message: [message] });
+			setMessage("");
+			return;
+		}
+		updateMessage(userUID, message);
 		setMessage("");
 	};
 
 	return (
 		<div className="main__continer_right">
-			<div className="main__messanges" style={{ color: "white" }}></div>
+			<div className="main__messanges" style={{ color: "white" }}>
+				{msg.message
+					? msg?.message.map((msg, i) => (
+							<p key={i} className="main__messanges_msg">
+								{msg}
+							</p>
+					  ))
+					: ""}
+			</div>
 			<div className="main__chat-box">
 				<form onSubmit={send}>
 					<textarea
